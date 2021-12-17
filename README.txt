@@ -11,4 +11,4 @@ Chương trình được chia thành các hàm con:
 Biên dịch:
     + GCC: gcc -o prog main.c
            ./prog
-    + Cmake + Ninja: 
+    + Cmake + Ninja: đang lỗi
