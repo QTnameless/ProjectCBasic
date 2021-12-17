@@ -1,3 +1,14 @@
-Có thể biên dịch chương trình bằng gcc hay ninja đều được 
-Không cần link đến thư viện nào, tôi đã tích hợp tất cả all.h
-Chạy hàm main.c để chạy toàn bộ chương trình: gcc -o prog main.c
+Chương trình quản lý danh sách bài hát
+Chương trình được chia thành các hàm con:
+    + cgetline.c để đọc 1 dòng từ dữ liệu văn bản input
+    + base.c chứa các cấu trúc và hàm nền tảng của chương trình
+    + search.c chứa các hàm cho mục đích tìm kiếm của chương trình
+    + sort.c chứa các hàm cho mục đích sắp xếp dữ liệu
+    + menu.c chứa giao diện của chương trình
+    + all.c để tổng hợp các hàm con thành 1
+    + main.c là phần chính của chương trình, biên dịch đoạn code này để khởi động chương trình
+
+Biên dịch:
+    + GCC: gcc -o prog main.c
+           ./prog
+    + Ninja: 
