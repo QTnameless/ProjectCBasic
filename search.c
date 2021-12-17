@@ -1,6 +1,6 @@
 #include "sort.c"
 #include <ctype.h>
-char *strlwr(char* s){
+char *strlwr(char* s){ // nếu sử dụng windows thì không cần build lại hàm này
     char* tmp = s;
     for (;*tmp;++tmp){
         *tmp = tolower((unsigned char) *tmp);

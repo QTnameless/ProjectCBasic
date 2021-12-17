@@ -11,9 +11,19 @@ int main(){
         count++;
         list = (song*)realloc(list,count*sizeof(song));
         list[count-1] = malloc(sizeof(struct song_t));
-        process(line,list[count-1]);
+        process(line,list[count-1],1);
     }
     fclose(f);
+
+    FILE *f_bin = fopen("bin.txt","r");
+    while(cgetline(&line,0,f_bin)){
+        count++;
+        list = (song*)realloc(list,count*sizeof(song));
+        list[count-1] = malloc(sizeof(struct song_t));
+        process(line,list[count-1],0);
+    }
+    fclose(f_bin);
+
     int choice = 0, choice_1, remove, restore;
     char strr[1024], new_song[1024], new_singer[1024], new_musician[1024], new_year[1024];
     while(choice != 7){
@@ -79,7 +89,7 @@ int main(){
             count++;
             list = (song*)realloc(list,count*sizeof(song));
             list[count-1] = malloc(sizeof(struct song_t));
-            Add(list[count-1],new_song,new_singer,new_musician,new_year);
+            Add(list[count-1],new_song,new_singer,new_musician,new_year,1);
             break;
 
 

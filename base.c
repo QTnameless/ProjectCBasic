@@ -11,12 +11,12 @@ typedef struct song_t{
     char *year;
     int ap;
 }*song;
-void Add(song a, char *name, char *singer, char *musician, char *year){
+void Add(song a, char *name, char *singer, char *musician, char *year, int q){
     a->name = strdup(name);
     a->singer = strdup(singer);
     a->musician = strdup(musician);
     a->year = strdup(year);
-    a->ap = 1;
+    a->ap = q;
 }
 void PrintASong(song a){
     printf("%30s", a->name);
@@ -24,7 +24,7 @@ void PrintASong(song a){
     printf("%30s",a->musician);
     printf("%30s\n",a->year);
 }
-void process(char *line, song a){
+void process(char *line, song a, int q){
     char *name;
     char *singer;
     char *musician;
@@ -33,7 +33,7 @@ void process(char *line, song a){
     singer = strtok(NULL,"#*\n");
     musician = strtok(NULL,"#*\n");
     year = strtok(NULL,"#*\n");
-    Add(a,name,singer,musician,year);
+    Add(a,name,singer,musician,year,q);
 }
 void PrintSong(song *a, int count){
     int idx = 0;
@@ -55,8 +55,6 @@ void PrintBin(song *a, int count){
         }
     }
 }
-
-
 void Save(song *a, int count){
     FILE *out = fopen("song.txt","w+");
     FILE *bin = fopen("bin.txt","w+");
