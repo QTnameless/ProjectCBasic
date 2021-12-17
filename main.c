@@ -1,24 +1,19 @@
+/*
+    Chương trình quản lý danh sách bài hát
+*/
 #include "all.h"
 int main(){
-    FILE *f_count = fopen("song.txt","r");
-    int count = 1;
-    char tmp;
-    while(!feof(f_count)){
-        fscanf(f_count, "%c",&tmp);
-        if(tmp == '\n') count++;
-    }
-    fclose(f_count);
-
-
+    int count = 0;
     FILE *f = fopen("song.txt","r");
     char *line = NULL;
     song *list = calloc(count, sizeof(song));
-    int i = 0;
     while(cgetline(&line,0,f)){
-        list[i] = malloc(sizeof(struct song_t));
-        process(line,list[i]);
-        i++;
+        count++;
+        list = (song*)realloc(list,count*sizeof(song));
+        list[count-1] = malloc(sizeof(struct song_t));
+        process(line,list[count-1]);
     }
+    fclose(f);
     int choice = 0, choice_1, remove, restore;
     char strr[1024], new_song[1024], new_singer[1024], new_musician[1024], new_year[1024];
     while(choice != 7){
@@ -110,6 +105,5 @@ int main(){
         }
         Save(list,count);
     }
-    fclose(f);
     return 0;
 }

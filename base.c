@@ -55,6 +55,8 @@ void PrintBin(song *a, int count){
         }
     }
 }
+
+
 void Save(song *a, int count){
     FILE *out = fopen("song.txt","w+");
     FILE *bin = fopen("bin.txt","w+");
