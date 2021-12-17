@@ -93,13 +93,13 @@ int main(){
             printf("Ban muon xoa bai hat nao? ");
             scanf("%d",&remove);
             list[remove-1]->ap = 0;
-            Save(list,count);
             break;
 
             case 5:
             PrintBin(list,count);
             break;
         }
+        Save(list,count);
     }
     fclose(f);
     return 0;
