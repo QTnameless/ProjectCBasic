@@ -71,7 +71,15 @@ void Save(song *a, int count){
             idx2++;
         }
     }
-
     fclose(bin);
     fclose(out);
+}
+void Restore(song *a, int count, int restore){
+    int idx = 0;
+    for(int i=0; i<count; i++){
+        if(!a[i]->ap && idx == restore - 1){
+            a[i]->ap = 1;
+        }
+        else if(!a[i]->ap) idx++;
+    }
 }

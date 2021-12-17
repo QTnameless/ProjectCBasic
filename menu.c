@@ -6,7 +6,8 @@ void Menu(){
     printf("3. Them bai hat\n");
     printf("4. Xoa bai hat\n");
     printf("5. Thung rac\n");
-    printf("6. Thoat\n");
+    printf("6. Khoi phuc bai hat\n");
+    printf("7. Thoat\n");
 }
 void Thuoctinh(){
     printf("1. Ten bai hat\n");

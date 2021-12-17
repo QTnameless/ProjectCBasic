@@ -19,9 +19,9 @@ int main(){
         process(line,list[i]);
         i++;
     }
-    int choice = 0, choice_1, remove;
+    int choice = 0, choice_1, remove, restore;
     char strr[1024], new_song[1024], new_singer[1024], new_musician[1024], new_year[1024];
-    while(choice != 6){
+    while(choice != 7){
         Menu();
         printf("Nhap vao lua chon cua ban: ");
         scanf("%d",&choice);
@@ -90,14 +90,23 @@ int main(){
 
             case 4:
             clear();
-            printf("Ban muon xoa bai hat nao? ");
+            printf("Nhap so thu tu bai ban muon xoa: ");
             scanf("%d",&remove);
             list[remove-1]->ap = 0;
             break;
 
+
             case 5:
             PrintBin(list,count);
             break;
+
+
+            case 6:
+            PrintBin(list,count);
+            printf("Nhap so thu tu bai ban muon khoi phuc: ");
+            scanf("%d",&restore);
+            Restore(list,count,restore);
+
         }
         Save(list,count);
     }
