@@ -1,7 +1,7 @@
 /*
     Chương trình quản lý danh sách bài hát
 */
-#include "all.h"
+#include "Lib/all.h"
 int main(){
     int count = 0;
     FILE *f = fopen("song.txt","r");
