@@ -77,22 +77,24 @@ void Save(song *a, int count){
 void Remove(song *a, int count, int remove){
     int idx = 1;
     for(int i=0; i<count; i++){
-        if(idx == remove && a[i]->ap){
-            a[i]->ap = 0;
-            break;
+        if(a[i]->ap){
+            if(idx == remove){
+                a[i]->ap = 0;
+                break;
+            }
+            else idx++;
         }
-        else if(idx!=remove) idx++;
-        // else if(!a[i]->ap) continue;
     }
 }
 void Restore(song *a, int count, int restore){
     int idx = 1;
     for(int i=0; i<count; i++){
-        if(idx == restore && !a[i]->ap){
-            a[i]->ap = 1;
-            break;
+        if(!a[i]->ap){
+            if(idx == restore){
+                a[i]->ap = 1;
+                break;
+            }
+            else idx++;
         }
-        else if(idx!=restore) idx++;
-        // else if(a[i]->ap) continue;
     }
 }
