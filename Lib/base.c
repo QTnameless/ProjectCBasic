@@ -45,7 +45,7 @@ void PrintSong(song *a, int count){
             idx++;
         }
     }
-    if(i == 0){
+    if(idx == 0){
         printf("Khong co tep nao\n");
     }
 }
@@ -59,7 +59,7 @@ void PrintBin(song *a, int count){
             idx++;
         }
     }
-    if(i == 0){
+    if(idx == 0){
         printf("Khong co tep nao\n");
     }
 }
