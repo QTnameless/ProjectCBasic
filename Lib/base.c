@@ -37,22 +37,30 @@ void process(char *line, song a, int q){
 }
 void PrintSong(song *a, int count){
     int idx = 0;
-    for(int i=0; i<count; i++){
+    int i = 0;
+    for(i=0; i<count; i++){
         if(a[i]->ap){
             printf("%d  ",idx+1);
             PrintASong(a[i]);
             idx++;
         }
     }
+    if(i == 0){
+        printf("Khong co tep nao\n");
+    }
 }
 void PrintBin(song *a, int count){
     int idx = 0;
-    for(int i=0; i<count; i++){
+    int i = 0;
+    for(i=0; i<count; i++){
         if(!a[i]->ap){
             printf("%d  ",idx+1);
             PrintASong(a[i]);
             idx++;
         }
+    }
+    if(i == 0){
+        printf("Khong co tep nao\n");
     }
 }
 void Save(song *a, int count){
