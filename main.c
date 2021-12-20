@@ -95,9 +95,11 @@ int main(){
 
             case 4:
             clear();
+            qsort(list,count,sizeof(song),compare_name);
+            PrintSong(list,count);
             printf("Nhap so thu tu bai ban muon xoa: ");
             scanf("%d",&remove);
-            list[remove-1]->ap = 0;
+            Remove(list,count,remove);
             break;
 
 
@@ -111,6 +113,7 @@ int main(){
             printf("Nhap so thu tu bai ban muon khoi phuc: ");
             scanf("%d",&restore);
             Restore(list,count,restore);
+            break;
 
         }
         Save(list,count);
