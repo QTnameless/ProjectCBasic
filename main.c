@@ -96,6 +96,7 @@ int main(){
             case 4:
             clear();
             qsort(list,count,sizeof(song),compare_name);
+            Save(list,count);
             PrintSong(list,count);
             printf("Nhap so thu tu bai ban muon xoa: ");
             scanf("%d",&remove);
